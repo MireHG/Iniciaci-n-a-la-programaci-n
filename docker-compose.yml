@@ -1,0 +1,47 @@
+version: '3'
+services:
+ php-xampp:
+  build:
+   context: ./docker/images/php
+   args:
+    USER_ID: ${USER_ID}
+    USER_NAME: ${USER_NAME}
+  ports:
+   - 8000:80
+  volumes:
+   - ./htdocs:/var/www/html
+  container_name: php-xampp
+  user: ${USER_ID}
+  networks:
+   - docker-xampp
+
+ mysql-xampp:
+  image: mysql:latest
+  container_name: mysql-xampp
+  environment:
+   MYSQL_ROOT_PASSWORD: xampp
+  ports:
+   - "3306:3306"
+  volumes:
+   - ./docker/volumes/database:/var/lib/mysql
+  networks:
+   - docker-xampp
+
+ phpmyadmin-xampp:
+  image: phpmyadmin/phpmyadmin
+  container_name: phpmyadmin-clases
+  ports:
+   - 8080:80
+  environment:
+   PMA_HOST: mysql-xampp
+   PMA_PMADB: phpmyadmin
+   PMA_USER: root
+   PMA_PASSWORD: xampp
+   PMA_ARBITRARY: 1
+  depends_on:
+   - mysql-xampp
+  networks:
+   - docker-xampp
+      
+networks:
+ docker-xampp:
