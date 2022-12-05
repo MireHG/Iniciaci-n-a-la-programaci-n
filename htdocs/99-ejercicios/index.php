@@ -83,7 +83,7 @@ main("mireya", "12335");*/
 
 // Ejercicio 2. Dado un array de números, mostrar por pantalla los que sean mayor de 5.
 
-function main ($arrayDeNumeros){
+/* function main ($arrayDeNumeros){
     for($i = 0; $i < \count($arrayDeNumeros); $i++){
         if($arrayDeNumeros[$i]> 5){
             echo $arrayDeNumeros[$i] . ", " ; //Si en lugar de $arrayDeNumeros[$i], pusiéramos solo [$i] nos mostraría la posición que cumple la condición dentro del array.
@@ -91,14 +91,72 @@ function main ($arrayDeNumeros){
     }
 }
 
-main([5, 7, 2, 34, 89]);
+main([5, 7, 2, 34, 89]); */
 
 // Ejercicio 3. Dado un array de números, mostrar el mayor de ellos.
 
-function main($arrayDeNumeros){
-    for($i=0;$i)
+/* function main($arrayDeNumeros){
+    $numeroMayor = 0;
+    for($i=0; $i < \count($arrayDeNumeros); $i++){ // $i = 0
+        if($arrayDeNumeros[$i] > $numeroMayor){ // $arrayDeNumeros[$i] = 5
+            $numeroMayor = $arrayDeNumeros[$i];
+        }
+    }
+    echo("El mayor es " . $numeroMayor);
 
-//En proceso.
 }
 
-main ([5, 9, 45, 12, 67, 1])
+main ([5, 9, 45, 12, 67, 1]); */
+
+// Ejercicio 4. Dado un array de palabras, mostrar por pantalla las que empiecen por A.
+
+/* function main($arrayFrutas){
+//    var_dump(substr(string: "manzana", offset: 0, lenght: 1)) // Muestra el montenido de un array. - Tres parámetros. El primero es string donde queremos buscar, el segundo la posición donde empieza y el tercero el número de caracteres que queremos mostrar.
+    for($i=0; $i < \count($arrayFrutas); $i++){
+        $primeraLetra = substr($arrayFrutas[$i], 0, 1);
+        if($primeraLetra == "a"){
+            echo $arrayFrutas[$i] . ", ";
+        }
+    }
+}
+
+main (["pera", "manzana", "arandano", "aguacate"]); */
+
+// Ejercicio 5. Dada una contraseña, verificar si tiene, al menos, 2 mayúsculas y un número.
+
+/* function main($password){
+    $upperCounter = 0;
+    $numberCounter = 0;
+
+    for($i=0; $i < \strlen($password); $i++){
+        $letter = substr($password, $i, 1);
+        if(ctype_upper($letter)) { //Con el if, si no pones nada es true.
+            $upperCounter++; // Incluimos ++ para que vaya añadiendo 1 si se cumple la condición. 
+        }
+        if(is_numeric($letter)){
+            $numberCounter++;
+        }
+    }
+    if($upperCounter >= 2 && $numberCounter >= 1){
+        echo "La contraseña es válida.";
+    } else {
+        echo "La contraseña es inválida.";
+    }
+}
+
+main("kjhdGidfG2sog"); */
+
+//Formas de añadir 1 a una variables y que se guarde. Si fuera otro número se intercambia por el 1 y la tercera función no se puede usar.
+//            $upperCounter = $upperCounter + 1;
+//            $upperCounter += 1;
+//            $upperCounter ++;
+
+        
+// Ejercicio 6. Mostrar la tabla de multiplicar del número que introduzca el usuario.
+// La tabla tiene que mostrarse de la siguiente manera:
+// 2 x 1 = 2
+// 2 x 2 = 4
+// ...
+//Hasta el 10.
+// Para hacer un salto de línea con un echo, escribir lo siguiente: echo[lo-que-queramos] . "<br/>"
+// Ejemplo: echo "2 x 1 = 2" . "<br/>"
